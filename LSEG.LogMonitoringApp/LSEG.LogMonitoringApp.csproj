@@ -1,0 +1,17 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net8.0-windows</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <UseWPF>true</UseWPF>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\LSEG.LogMonitoring.Core2\LSEG.LogMonitoring.Core.csproj" />
+    <ProjectReference Include="..\LSEG.LogMonitoring.Module.Stats\LSEG.LogMonitoring.Module.Stats.csproj" />
+    <ProjectReference Include="..\LSEG.LogMonitoring.Modules\LSEG.LogMonitoring.Module.Data.csproj" />
+  </ItemGroup>
+
+</Project>

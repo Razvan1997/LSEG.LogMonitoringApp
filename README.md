@@ -21,7 +21,7 @@ This project provides a simple UI for loading `.log` files, parsing entries that
 - Region-based view injection (custom RegionManager)
 - Cross-module communication via a lightweight EventAggregator
 - File selection using OpenFileDialog
-- Real-time job statistics summary
+- Real-time log statistics summary
 
 ## Architecture
 
@@ -29,15 +29,15 @@ The app is built using:
 
 - MVVM – All views have view models with property binding and commands
 - Custom RegionManager – For injecting views into named UI regions
-- Custom EventAggregator – For sending messages (like job count) between modules
+- Custom EventAggregator – For sending messages (logs count) between modules
 - Modules – Each feature (Log Analyzer, Statistics) is a separate module implementing `IModule`
 
 ## How it works
 
 1. On startup, modules are manually registered and initialized by a `Bootstrapper`.
-2. `LogAnalyzerModule` registers a main view that lets users load log files and see job details.
+2. `LogAnalyzerModule` registers a main view that lets users load log files and see log details.
 3. `LogStatsModule` injects a statistics view into a nested region within the analyzer view.
-4. When logs are loaded, a `JobCountMessage` is published using the EventAggregator.
+4. When logs are loaded, a `LogCountMessage` is published using the EventAggregator.
 5. The statistics module listens for that message and updates the UI accordingly.
 
 ## Technologies
